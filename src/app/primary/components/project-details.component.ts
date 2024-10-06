@@ -28,13 +28,17 @@ interface IProjectDetails {
       <h2 class="text-xl sm:text-2xl md:text-3xl text-center text-violet-400">
         {{ selectedProject.subHeading }}
       </h2>
-
+      <!-- Project Description -->
+      <div
+        class="max-w-3xl text-justify leading-relaxed text-lg text-violet-100 mt-8 px-4"
+        [innerHTML]="selectedProject.description"
+      ></div>
       <!-- Image -->
-      <img
+      <!-- <img
         src="{{ selectedProject.image }}"
         alt="Project Image"
         class="w-4/5 h-auto rounded-lg shadow-lg"
-      />
+      /> -->
       <!-- GitHub Links -->
       <div
         class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8"
@@ -42,6 +46,7 @@ interface IProjectDetails {
         <a
           href="{{ selectedProject.frontendRepo }}"
           target="_blank"
+          *ngIf="selectedProject.frontendRepo"
           class="flex items-center px-6 py-3 rounded-full bg-white text-slate-950 border border-solid border-white hover:border-violet-700 duration-200 group"
         >
           <i class="fab fa-github text-2xl mr-2"></i>
@@ -50,6 +55,7 @@ interface IProjectDetails {
         <a
           href="{{ selectedProject.backendRepo }}"
           target="_blank"
+          *ngIf="selectedProject.backendRepo"
           class="flex items-center px-6 py-3 rounded-full bg-white text-slate-950 border border-solid border-white hover:border-violet-700 duration-200 group"
         >
           <i class="fab fa-github text-2xl mr-2"></i>
@@ -57,24 +63,73 @@ interface IProjectDetails {
         </a>
       </div>
       <!-- Website Link -->
-      <div class="mt-6" *ngIf="selectedProject.websiteUrl">
+      <div class="mt-6">
         <a
-          href="{{ selectedProject.websiteUrl }}"
+          *ngIf="selectedProject.websiteUrl; else noUrl"
+          [href]="selectedProject.websiteUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="px-8 py-4 rounded-full bg-violet-800 text-white text-lg font-medium hover:bg-violet-500 duration-200 group"
         >
           Visit the Website
         </a>
+
+        <ng-template #noUrl>
+          <button
+            class="px-8 py-4 rounded-full bg-gray-400 text-white text-lg font-medium cursor-not-allowed relative"
+            disabled
+          >
+            Visit the Website
+            <span class="absolute -top-2 right-2 text-sm text-red-500">*</span>
+
+            <!-- Custom tooltip -->
+            <span class="tooltip">Work in progress</span>
+          </button>
+        </ng-template>
       </div>
-      <!-- Project Description -->
-      <div
-        class="max-w-3xl text-justify leading-relaxed text-lg text-violet-100 mt-8 px-4"
-        [innerHTML]="selectedProject.description"
-      ></div>
     </div>
   `,
-  styles: [],
+  styles: [
+    `
+      button {
+        position: relative;
+      }
+
+      .tooltip {
+        visibility: hidden;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%; /* Adjust as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip::after {
+        content: '';
+        position: absolute;
+        top: 100%; /* Arrow points down */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+      }
+
+      button:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    `,
+  ],
 })
 export class ProjectDetailsComponent {
   selectedProject: IProjectDetails = {
@@ -98,8 +153,7 @@ export class ProjectDetailsComponent {
       heading: 'Dialogue Bridge',
       subHeading:
         'A Dialogue and Debate Platform That Bridges Different Worlds of opinions',
-      image:
-        'https://i.ibb.co/hY9tS7J/DALL-E-2024-09-24-16-39-23-A-tech-savvy-banner-design-for-Dialogue-Bridge-featuring-two-groups-of-pe.webp',
+      image: '',
       backendRepo: 'https://github.com/prasunchakra/DialogueBridge-Backend',
       frontendRepo: 'https://github.com/prasunchakra/DialogueBridge-Frontend',
       backendRepoName: 'DialogueBridge-Backend',
@@ -116,12 +170,12 @@ export class ProjectDetailsComponent {
       heading: 'Ethical Wealth',
       subHeading:
         'A Holistic Wealth Development Platform Focusing on Finance, Health, and Education',
-      image: 'https://i.ibb.co/your-image-link/EthicalWealth-Banner.webp', // Replace with your actual image URL
-      backendRepo: 'https://github.com/yourusername/EthicalWealth-Backend',
-      frontendRepo: 'https://github.com/yourusername/EthicalWealth-Frontend',
-      backendRepoName: 'EthicalWealth-Backend',
-      frontendRepoName: 'EthicalWealth-Frontend',
-      websiteUrl: '', // Add your website URL when ready
+      image: '',
+      backendRepo: '',
+      frontendRepo: '',
+      backendRepoName: '',
+      frontendRepoName: '',
+      websiteUrl: '',
       description: `<p>
                       EthicalWealth is a comprehensive wealth development application that transcends traditional financial management. It embraces finance, health, education, and overall well-being, providing a holistic approach to personal growth. The platform measures your development over days, months, and years, encouraging you to compete against your past self for continuous improvement.
                     </p>
@@ -133,12 +187,12 @@ export class ProjectDetailsComponent {
       heading: 'Bliss Quests',
       subHeading:
         'A Community Platform to Explore Activities for Relaxation and Rejuvenation',
-      image: 'https://i.ibb.co/your-image-link/BlissQuests-Banner.webp', // Replace with your actual image URL
-      backendRepo: 'https://github.com/yourusername/BlissQuests-Backend',
-      frontendRepo: 'https://github.com/yourusername/BlissQuests-Frontend',
-      backendRepoName: 'BlissQuests-Backend',
-      frontendRepoName: 'BlissQuests-Frontend',
-      websiteUrl: '', // Add your website URL when ready
+      image: '',
+      backendRepo: 'https://github.com/prasunchakra/BlissQuests-Monolith',
+      frontendRepo: '',
+      backendRepoName: 'BlissQuests-Monolith',
+      frontendRepoName: '',
+      websiteUrl: '',
       description: `<p>
                       BlissQuests is a platform dedicated to helping individuals discover and share activities that help them unwind and rejuvenate after hard work. Whether it's traveling, sports, recreational activities, or indulging in a favorite hobby, BlissQuests connects you with a community that shares your passions and interests.
                     </p>
