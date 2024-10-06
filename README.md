@@ -6,7 +6,3 @@
         <img src="https://img.shields.io/badge/Website-Prasun's%20Portal-blue?style=for-the-badge&logo=world&logoColor=white" alt="Personal Website Badge"/>
     </a>
 </p>
-
-<p><img align="center" src="public/images/logo.gif" alt="prasunchakra" /></p>
-
-Let's connect and explore the vast universe of tech together! 
