@@ -23,7 +23,7 @@ import { StepComponent } from './step.component';
           The problem-solving wizard in the realm of
           <span class="poppins text-violet-400">Software Engineering</span>
         </h3>
-        <button
+        <!-- <button
           class="blueShadow mx-auto text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 mb-12 group rounded-full bg-white text-slate-950"
         >
           <div
@@ -32,11 +32,11 @@ import { StepComponent } from './step.component';
           <h4 class="relative z-9">
             <a href="#projects">My Projects &darr;</a>
           </h4>
-        </button>
+        </button> -->
       </div>
       <!-- Add any additional content here -->
     </section>
-    <div class="flex flex-col p-4 w-full">
+    <!-- <div class="flex flex-col p-4 w-full">
       <section class="flex flex-col gap-24" id="projects">
         <div class="flex flex-col gap-2 text-center">
           <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
@@ -86,7 +86,7 @@ import { StepComponent } from './step.component';
           </app-step>
         </div>
       </section>
-    </div>
+    </div> -->
   `,
   styles: ``,
 })

@@ -39,7 +39,7 @@ import { RouterModule } from '@angular/router';
             <p>{{ tab.name }}</p>
           </a>
         </ng-container>
-        <button
+        <!-- <button
           class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white text-slate-950"
         >
           <div
@@ -98,7 +98,7 @@ import { RouterModule } from '@angular/router';
               <i class="fa-brands fa-youtube"></i>
             </a>
           </h4>
-        </button>
+        </button> -->
       </div>
     </header>
   `,
