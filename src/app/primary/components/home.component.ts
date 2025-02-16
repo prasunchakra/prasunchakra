@@ -23,7 +23,7 @@ import { StepComponent } from './step.component';
           The problem-solving wizard in the realm of
           <span class="poppins text-violet-400">Software Engineering</span>
         </h3>
-        <!-- <button
+        <button
           class="blueShadow mx-auto text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 mb-12 group rounded-full bg-white text-slate-950"
         >
           <div
@@ -32,11 +32,11 @@ import { StepComponent } from './step.component';
           <h4 class="relative z-9">
             <a href="#projects">My Projects &darr;</a>
           </h4>
-        </button> -->
+        </button>
       </div>
       <!-- Add any additional content here -->
     </section>
-    <!-- <div class="flex flex-col p-4 w-full">
+    <div class="flex flex-col p-4 w-full">
       <section class="flex flex-col gap-24" id="projects">
         <div class="flex flex-col gap-2 text-center">
           <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
@@ -51,7 +51,7 @@ import { StepComponent } from './step.component';
           </h6>
         </div>
 
-        <div class="flex justify-center space-x-4 -mt-10">
+        <!-- <div class="flex justify-center space-x-4 -mt-10">
           <a
             href="https://topmate.io/prasunchakra"
             target="_blank"
@@ -68,50 +68,94 @@ import { StepComponent } from './step.component';
             <i class="fa-brands fa-discord"></i>
             <p>Join to discuss</p>
           </a>
-        </div>
+        </div> -->
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
-          <app-step [step]="steps[0]">
-            <p>{{ steps[0].description }}</p>
-          </app-step>
-          <app-step [step]="steps[1]">
-            <p>
-              {{ steps[1].description }}
-            </p>
-          </app-step>
-          <app-step [step]="steps[2]">
-            <p>
-              {{ steps[2].description }}
-            </p>
-          </app-step>
-        </div>
+      @for (step of steps; track step.name) {
+        <app-step [step]="step">
+          <p>{{ step.description }}</p>
+        </app-step>
+      }
+    </div>
       </section>
-    </div> -->
+    </div>
   `,
   styles: ``,
 })
 export class HomeComponent {
   steps = [
     {
-      name: 'Dialogue Bridge',
+      name: 'OmniSphere',
+      icon: 'fa-solid fa-globe',
+      description:
+        'An all-in-one platform that combines such that Users can shop, book rides, order food, and access multiple services from one place.',
+      href: 'project-details/OmniSphere',
+    },
+    {
+      name: 'InQuizitive',
+      icon: 'fa-solid fa-user-graduate',
+      description:
+        'An interactive quiz platform that allows users to play solo or in real-time competitive quiz battles, featuring AI-generated questions, lifelines, leaderboards, and real prizes.',
+      href: 'project-details/InQuizitive',
+    },
+    {
+      name: 'TravelBuddy',
+      icon: 'fa-solid fa-plane',
+      description:
+        'A travel companion that recommends destinations, plans itineraries, and provides AI-powered insights based on past trips.',
+      href: 'project-details/TravelBuddy',
+    },
+    
+    {
+      name: 'ThreatSentry',
+      icon: 'fa-solid fa-shield-alt',
+      description:
+        'An automated security tool that monitors logs, detects anomalies, and alerts organizations to potential cyber threats.',
+      href: 'project-details/ThreatSentry',
+    },
+    {
+      name: 'SkillTailor',
+      icon: 'fa-solid fa-lightbulb',
+      description:
+        'A personalized learning platform that adapts to user preferences and suggests tailored content for upskilling.',
+      href: 'project-details/SkillTailor',
+    },
+    {
+      name: 'InterviewPrepAI',
+      icon: 'fa-solid fa-robot',
+      description:
+        'An AI-driven platform that analyzes resumes, suggests improvements, and generates interview questions based on job descriptions. Ideal for job seekers and hiring teams.',
+      href: 'project-details/InterviewPrepAI',
+    },
+    {
+      name: 'FinView',
+      icon: 'fa-solid fa-wallet',
+      description:
+        'An AI-powered budgeting and expense tracking app that provides personalized financial insights.',
+      href: 'project-details/FinView',
+    },
+    {
+      name: 'TableTalks',
       icon: 'fa-solid fa-comments',
       description:
-        'A Dialogue and Debate Platform That Bridges Different Worlds of opinions',
-      href: 'project-details/dialogueBridge',
+        'An AI-powered structured online debate platform where users can present arguments, provide evidence, and counter opinions.',
+      href: 'project-details/TableTalks',
     },
     {
-      name: 'BlissQuests',
-      icon: 'fa-solid fa-tasks',
+      name: 'HealthHarmony',
+      icon: 'fa-solid fa-heartbeat',
       description:
-        'A Community Platform to Explore Activities for Relaxation and Rejuvenation',
-      href: 'project-details/blissQuests',
+        'An AI-driven diet and fitness assistant that provides personalized recommendations based on your habits and health goals.',
+      href: 'project-details/HealthHarmony',
     },
+    
     {
-      name: 'Ethical Wealth',
-      icon: 'fa-solid fa-chart-line',
+      name: 'BlockDrive',
+      icon: 'fa-solid fa-cloud',
       description:
-        'A Holistic Wealth Development Platform Focusing on Finance, Health, and Education',
-      href: 'project-details/ethicalWealth',
+        'A Web3-powered alternative to Google Drive, offering secure, decentralized file storage using blockchain.',
+      href: 'project-details/BlockDrive',
     },
+
   ];
 }

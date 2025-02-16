@@ -149,56 +149,116 @@ export class ProjectDetailsComponent {
     });
   }
   projectDetails: { [key: string]: IProjectDetails } = {
-    dialogueBridge: {
-      heading: 'Dialogue Bridge',
-      subHeading:
-        'A Dialogue and Debate Platform That Bridges Different Worlds of opinions',
-      image: '',
-      backendRepo: 'https://github.com/prasunchakra/DialogueBridge-Backend',
-      frontendRepo: 'https://github.com/prasunchakra/DialogueBridge-Frontend',
-      backendRepoName: 'DialogueBridge-Backend',
-      frontendRepoName: 'DialogueBridge-Frontend',
-      websiteUrl: '',
-      description: ` <p>
-                        Dialogue Bridge is an innovative platform designed to foster meaningful dialogue and debate among individuals with diverse opinions. By bridging different worlds of opinions, it provides a respectful and engaging environment where users can discuss various topics, share perspectives, and learn from one another.
-                    </p>
-                    <p class="mt-4">
-                      This open-source project welcomes contributions from the community. Explore the backend repository on GitHub at <a href="https://github.com/prasunchakra/DialogueBridge-Backend">DialogueBridge-Backend</a> and the frontend repository at <a href="https://github.com/prasunchakra/DialogueBridge-Frontend">DialogueBridge-Frontend</a>. Join us in building a space where constructive dialogue thrives.
-                    </p>`,
+    "OmniSphere": {
+      "heading": "OmniSphere",
+      "subHeading": "A next-generation super app that seamlessly integrates e-commerce, ride-hailing, food delivery, and essential services into one powerful platform. Designed for efficiency and convenience, it is poised to redefine the digital marketplace.",
+      "image": "https://prasunchakra.com/assets/images/omnisphere.png",
+      "backendRepo": "https://github.com/prasunchakra/OmniSphere-backend",
+      "frontendRepo": "https://github.com/prasunchakra/OmniSphere-frontend",
+      "backendRepoName": "Codebase:- OmniSphere Backend",
+      "frontendRepoName": "Codebase:- OmniSphere Frontend",
+      "websiteUrl": "",
+      "description": ""
     },
-    ethicalWealth: {
-      heading: 'Ethical Wealth',
-      subHeading:
-        'A Holistic Wealth Development Platform Focusing on Finance, Health, and Education',
-      image: '',
-      backendRepo: '',
-      frontendRepo: '',
-      backendRepoName: '',
-      frontendRepoName: '',
-      websiteUrl: '',
-      description: `<p>
-                      EthicalWealth is a comprehensive wealth development application that transcends traditional financial management. It embraces finance, health, education, and overall well-being, providing a holistic approach to personal growth. The platform measures your development over days, months, and years, encouraging you to compete against your past self for continuous improvement.
-                    </p>
-                    <p class="mt-4">
-                      This open-source project is open for community contributions. Explore the backend repository on GitHub at <a href="https://github.com/yourusername/EthicalWealth-Backend">EthicalWealth-Backend</a> and the frontend repository at <a href="https://github.com/yourusername/EthicalWealth-Frontend">EthicalWealth-Frontend</a>. Join us in building a platform that fosters holistic growth and ethical wealth accumulation.
-                    </p>`,
+    "InQuizitive": {
+      "heading": "InQuizitive",
+      "subHeading": "An interactive quiz platform designed to spark curiosity and engage learners. Built with scalability in mind, it’s on track to become a full-fledged EdTech solution—integrating robust LMS features, dynamic analytics, and more.",
+      "image": "https://prasunchakra.com/assets/images/inquizitive.png",
+      "backendRepo": "https://github.com/prasunchakra/InQuizitive-backend",
+      "frontendRepo": "https://github.com/prasunchakra/InQuizitive-frontend",
+      "backendRepoName": "Codebase:- InQuizitive Backend",
+      "frontendRepoName": "Codebase:- InQuizitive Frontend",
+      "websiteUrl": "https://inquizitive.prasunchakra.com/",
+      "description": ""
     },
-    blissQuests: {
-      heading: 'Bliss Quests',
-      subHeading:
-        'A Community Platform to Explore Activities for Relaxation and Rejuvenation',
-      image: '',
-      backendRepo: 'https://github.com/prasunchakra/BlissQuests-Monolith',
-      frontendRepo: '',
-      backendRepoName: 'BlissQuests-Monolith',
-      frontendRepoName: '',
-      websiteUrl: '',
-      description: `<p>
-                      BlissQuests is a platform dedicated to helping individuals discover and share activities that help them unwind and rejuvenate after hard work. Whether it's traveling, sports, recreational activities, or indulging in a favorite hobby, BlissQuests connects you with a community that shares your passions and interests.
-                    </p>
-                    <p class="mt-4">
-                      This open-source project welcomes contributions from the community. Explore the backend repository on GitHub at <a href="https://github.com/yourusername/BlissQuests-Backend">BlissQuests-Backend</a> and the frontend repository at <a href="https://github.com/yourusername/BlissQuests-Frontend">BlissQuests-Frontend</a>. Join us in building a platform where relaxation and enjoyment are just a quest away.
-                    </p>`,
+    "TravelBuddy": {
+      "heading": "TravelBuddy",
+      "subHeading": "An AI-powered travel assistant that personalizes itineraries, suggests hidden gems, and optimizes trip planning with real-time insights. Designed to make traveling seamless and unforgettable.",
+      "image": "https://prasunchakra.com/assets/images/travelbuddy.png",
+      "backendRepo": "https://github.com/prasunchakra/TravelBuddy-backend",
+      "frontendRepo": "https://github.com/prasunchakra/TravelBuddy-frontend",
+      "backendRepoName": "Codebase:- TravelBuddy Backend",
+      "frontendRepoName": "Codebase:- TravelBuddy Frontend",
+      "websiteUrl": "",
+      "description": ""
     },
-  };
+    "ThreatSentry": {
+      "heading": "ThreatSentry",
+      "subHeading": "A cutting-edge AI-driven cybersecurity platform that proactively detects and mitigates security threats in real-time. Engineered for enterprises to stay ahead of cyber risks.",
+      "image": "https://prasunchakra.com/assets/images/threatsentry.png",
+      "backendRepo": "https://github.com/prasunchakra/ThreatSentry-backend",
+      "frontendRepo": "https://github.com/prasunchakra/ThreatSentry-frontend",
+      "backendRepoName": "Codebase:- ThreatSentry Backend",
+      "frontendRepoName": "Codebase:- ThreatSentry Frontend",
+      "websiteUrl": "",
+      "description": ""
+    },
+    "SkillTailor": {
+      "heading": "SkillTailor",
+      "subHeading": "An AI-powered learning platform that intelligently adapts to user preferences, offering curated courses and skill-building pathways for a tailored learning experience.",
+      "image": "https://prasunchakra.com/assets/images/skilltailor.png",
+      "backendRepo": "https://github.com/prasunchakra/SkillTailor-backend",
+      "frontendRepo": "https://github.com/prasunchakra/SkillTailor-frontend",
+      "backendRepoName": "Codebase:- SkillTailor Backend",
+      "frontendRepoName": "Codebase:- SkillTailor Frontend",
+      "websiteUrl": "",
+      "description": ""
+    },
+    "InterviewPrepAI": {
+      "heading": "InterviewPrepAI",
+      "subHeading": "A state-of-the-art AI-powered interview preparation tool that provides resume analysis, personalized question generation, and AI-driven feedback to help job seekers excel.",
+      "image": "https://prasunchakra.com/assets/images/interviewprepai.png",
+      "backendRepo": "https://github.com/prasunchakra/InterviewPrepAI-backend",
+      "frontendRepo": "https://github.com/prasunchakra/InterviewPrepAI-frontend",
+      "backendRepoName": "Codebase:- InterviewPrepAI Backend",
+      "frontendRepoName": "Codebase:- InterviewPrepAI Frontend",
+      "websiteUrl": "",
+      "description": ""
+    },
+    "FinView": {
+      "heading": "FinView",
+      "subHeading": "A smart personal finance assistant that tracks expenses, analyzes spending habits, and provides AI-driven financial recommendations to optimize savings.",
+      "image": "https://prasunchakra.com/assets/images/finview.png",
+      "backendRepo": "https://github.com/prasunchakra/FinView-backend",
+      "frontendRepo": "https://github.com/prasunchakra/FinView-frontend",
+      "backendRepoName": "Codebase:- FinView Backend",
+      "frontendRepoName": "Codebase:- FinView Frontend",
+      "websiteUrl": "",
+      "description": ""
+    },
+    "TableTalks": {
+      "heading": "TableTalks",
+      "subHeading": "An AI-moderated debate and discussion platform that enhances structured argumentation, logical reasoning, and fact-checking for productive discourse.",
+      "image": "https://prasunchakra.com/assets/images/tabletalks.png",
+      "backendRepo": "https://github.com/prasunchakra/TableTalks-backend",
+      "frontendRepo": "https://github.com/prasunchakra/TableTalks-frontend",
+      "backendRepoName": "Codebase:- TableTalks Backend",
+      "frontendRepoName": "Codebase:- TableTalks Frontend",
+      "websiteUrl": "",
+      "description": ""
+    },
+    "HealthHarmony": {
+      "heading": "HealthHarmony",
+      "subHeading": "An AI-driven health companion that offers personalized diet and fitness plans, tracking progress, and optimizing wellness based on individual habits and goals.",
+      "image": "https://prasunchakra.com/assets/images/healthharmony.png",
+      "backendRepo": "https://github.com/prasunchakra/HealthHarmony-backend",
+      "frontendRepo": "https://github.com/prasunchakra/HealthHarmony-frontend",
+      "backendRepoName": "Codebase:- HealthHarmony Backend",
+      "frontendRepoName": "Codebase:- HealthHarmony Frontend",
+      "websiteUrl": "",
+      "description": ""
+    },
+    "BlockDrive": {
+      "heading": "BlockDrive",
+      "subHeading": "A decentralized and secure cloud storage solution leveraging blockchain technology to provide immutable, encrypted, and peer-to-peer file storage.",
+      "image": "https://prasunchakra.com/assets/images/blockdrive.png",
+      "backendRepo": "https://github.com/prasunchakra/BlockDrive-backend",
+      "frontendRepo": "https://github.com/prasunchakra/BlockDrive-frontend",
+      "backendRepoName": "Codebase:- BlockDrive Backend",
+      "frontendRepoName": "Codebase:- BlockDrive Frontend",
+      "websiteUrl": "",
+      "description": ""
+    }
+  }
+  ;
 }
