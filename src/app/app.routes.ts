@@ -27,7 +27,7 @@ export const routes: Routes = [
     component: SupportComponent,
   },
   {
-    path: 'project-details/:projectName',
+    path: 'project-details/:category/:subcategory',
     title: 'Project Details',
     component: ProjectDetailsComponent,
   },

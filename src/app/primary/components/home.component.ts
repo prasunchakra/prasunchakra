@@ -30,7 +30,7 @@ import { StepComponent } from './step.component';
             class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
           ></div>
           <h4 class="relative z-9">
-            <a href="#projects">My Projects &darr;</a>
+            <a href="#projects">Work In Progress &darr;</a>
           </h4>
         </button>
       </div>
@@ -41,13 +41,21 @@ import { StepComponent } from './step.component';
         <div class="flex flex-col gap-2 text-center">
           <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
             Explore My
-            <span class="poppins text-violet-400">Open Source </span
-            >Initiatives!
+            <span class="poppins text-violet-400">Tech Journey!</span>
           </h3>
-          <h6 class="text-large sm:text-xl md:text-2xl">
-            Engage in open source projects. Your skills can make a world of
-            difference.
-            <span class="poppins text-violet-400">Collaborate now!</span>
+          <h6 class="mt-3 text-large sm:text-xl md:text-2xl">
+            From open-source projects to insightful blogs and engaging posts.
+            I’m building, sharing, and growing.
+            <span class="block mt-3 poppins text-violet-400 relative group cursor-pointer">
+              Stay connected and be part of the journey!
+              <span
+                class="absolute left-1/2 bottom-full mb-2 w-max -translate-x-1/2 
+           rounded bg-gray-800 px-2 py-1 text-xs text-white opacity-0 
+           transition-opacity duration-300 group-hover:opacity-100"
+              >
+                Follow me on Twitter, LinkedIn, or Instagram!
+              </span>
+            </span>
           </h6>
         </div>
 
@@ -70,13 +78,13 @@ import { StepComponent } from './step.component';
           </a>
         </div> -->
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
-      @for (step of steps; track step.name) {
-        <app-step [step]="step">
-          <p>{{ step.description }}</p>
-        </app-step>
-      }
-    </div>
+        <div class="mb-20 grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
+          @for (step of steps; track step.name) {
+          <app-step [step]="step">
+            <p>{{ step.description }}</p>
+          </app-step>
+          }
+        </div>
       </section>
     </div>
   `,
@@ -85,77 +93,48 @@ import { StepComponent } from './step.component';
 export class HomeComponent {
   steps = [
     {
-      name: 'OmniSphere',
-      icon: 'fa-solid fa-globe',
+      name: 'Operating Systems',
+      icon: 'fa-solid fa-terminal',
       description:
-        'An all-in-one platform that combines such that Users can shop, book rides, order food, and access multiple services from one place.',
-      href: 'project-details/OmniSphere',
+       'A curated collection of study materials, research papers, and in-depth resources to master Operating Systems.',
+      href: 'project-details/OperatingSystem/Medium',
+    },
+    {
+      name: 'Computer Networking',
+      icon: 'fa-solid fa-network-wired',
+      description:
+       'A curated collection of study materials, research papers, and in-depth resources to master Computer Networking.',
+      href: 'project-details/ComputerNetworking/Medium',
+    },
+    {
+      name: 'Cryptography',
+      icon: 'fa-solid fa-lock',
+      description:
+       'A curated collection of study materials, research papers, and in-depth resources to master Cryptography.',
+      href: 'project-details/Cryptography/Medium',
     },
     {
       name: 'InQuizitive',
       icon: 'fa-solid fa-user-graduate',
       description:
-        'An interactive quiz platform that allows users to play solo or in real-time competitive quiz battles, featuring AI-generated questions, lifelines, leaderboards, and real prizes.',
-      href: 'project-details/InQuizitive',
-    },
-    {
-      name: 'TravelBuddy',
-      icon: 'fa-solid fa-plane',
-      description:
-        'A travel companion that recommends destinations, plans itineraries, and provides AI-powered insights based on past trips.',
-      href: 'project-details/TravelBuddy',
-    },
-    
-    {
-      name: 'ThreatSentry',
-      icon: 'fa-solid fa-shield-alt',
-      description:
-        'An automated security tool that monitors logs, detects anomalies, and alerts organizations to potential cyber threats.',
-      href: 'project-details/ThreatSentry',
-    },
-    {
-      name: 'SkillTailor',
-      icon: 'fa-solid fa-lightbulb',
-      description:
-        'A personalized learning platform that adapts to user preferences and suggests tailored content for upskilling.',
-      href: 'project-details/SkillTailor',
-    },
-    {
-      name: 'InterviewPrepAI',
-      icon: 'fa-solid fa-robot',
-      description:
-        'An AI-driven platform that analyzes resumes, suggests improvements, and generates interview questions based on job descriptions. Ideal for job seekers and hiring teams.',
-      href: 'project-details/InterviewPrepAI',
-    },
+        'An interactive quiz platform designed to spark curiosity and engage learners. Built with scalability in mind, it’s on track to become a full-fledged EdTech solution—integrating robust LMS features, dynamic analytics, and more.',
+      href: 'project-details/InQuizitive/Project',
+    },  
     {
       name: 'FinView',
-      icon: 'fa-solid fa-wallet',
+      icon: 'fa-solid fa-money-bill',
       description:
-        'An AI-powered budgeting and expense tracking app that provides personalized financial insights.',
-      href: 'project-details/FinView',
-    },
+        'Smart Personal Finance Assistant. An AI-powered budgeting and expense tracking app that provides personalized financial insights and helps you make smarter money decisions through intelligent recommendations.',
+      href: 'project-details/FinView/Project',
+    },  
     {
-      name: 'TableTalks',
-      icon: 'fa-solid fa-comments',
+      name: 'OmniSphere',
+      icon: 'fa-solid fa-globe',
       description:
-        'An AI-powered structured online debate platform where users can present arguments, provide evidence, and counter opinions.',
-      href: 'project-details/TableTalks',
-    },
-    {
-      name: 'HealthHarmony',
-      icon: 'fa-solid fa-heartbeat',
-      description:
-        'An AI-driven diet and fitness assistant that provides personalized recommendations based on your habits and health goals.',
-      href: 'project-details/HealthHarmony',
-    },
-    
-    {
-      name: 'BlockDrive',
-      icon: 'fa-solid fa-cloud',
-      description:
-        'A Web3-powered alternative to Google Drive, offering secure, decentralized file storage using blockchain.',
-      href: 'project-details/BlockDrive',
-    },
+        'An all-in-one platform that combines the features of food delivery, e-commerce, ride-hailing, and essential services into a single app. Users can shop, book rides, order food, and access multiple services from one place.',
+      href: 'project-details/OmniSphere/Project',
+    },  
 
-  ];
+  ]
+
 }
