@@ -29,7 +29,7 @@ import { RouterModule } from '@angular/router';
           >
         </a>
       </h1>
-      <div class="sm:flex items-center gap-4 hidden">
+      <!-- <div class="sm:flex items-center gap-4 hidden">
         <ng-container *ngFor="let tab of tabs; let i = index">
           <a
             [href]="tab.link"
@@ -99,7 +99,7 @@ import { RouterModule } from '@angular/router';
             </a>
           </h4>
         </button> 
-      </div>
+      </div> -->
     </header>
   `,
   styles: [
