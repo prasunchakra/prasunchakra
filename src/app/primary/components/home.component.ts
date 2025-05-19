@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { StepComponent } from './step.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -129,6 +129,66 @@ import { CommonModule } from '@angular/common';
       }
     </form>
     
+    <!-- Projects Section -->
+    <div class="max-w-4xl mx-auto w-full px-4 py-16 text-center">
+      <div class="mb-12">
+        <h3 class="font-semibold text-2xl sm:text-3xl md:text-4xl mb-4">
+          Featured <span class="poppins text-violet-400">Projects</span>
+        </h3>
+        <p class="text-violet-400 max-w-2xl mx-auto mb-6">
+          Check out some of my recent work
+        </p>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <!-- InQuizitive -->
+        <a
+          href="https://github.com/prasunchakra/Inquizitive"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative p-6 rounded-2xl border-2 border-violet-100 hover:border-violet-300 bg-gradient-to-br from-white to-violet-50 transition-all duration-300 hover:shadow-lg hover:shadow-violet-100"
+        >
+          <div class="flex flex-col items-center">
+            <i class="fas fa-question-circle text-3xl text-violet-500 group-hover:text-violet-600 transition-colors duration-300"></i>
+            <span class="font-medium text-violet-700 mt-3">InQuizitive</span>
+            <span class="text-xs text-gray-500 mt-1">Quiz Application</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-violet-300 to-violet-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </a>
+
+        <!-- KarmaKanban -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative p-6 rounded-2xl border-2 border-violet-100 hover:border-violet-300 bg-gradient-to-br from-white to-violet-50 transition-all duration-300 hover:shadow-lg hover:shadow-violet-100"
+        >
+          <div class="flex flex-col items-center">
+            <i class="fas fa-tasks text-3xl text-violet-500 group-hover:text-violet-600 transition-colors duration-300"></i>
+            <span class="font-medium text-violet-700 mt-3">KarmaKanban</span>
+            <span class="text-xs text-gray-500 mt-1">Task Tracker</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-violet-300 to-violet-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </a>
+
+        <!-- OmniSphere -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative p-6 rounded-2xl border-2 border-violet-100 hover:border-violet-300 bg-gradient-to-br from-white to-violet-50 transition-all duration-300 hover:shadow-lg hover:shadow-violet-100"
+        >
+          <div class="flex flex-col items-center">
+            <i class="fas fa-shopping-cart text-3xl text-violet-500 group-hover:text-violet-600 transition-colors duration-300"></i>
+            <span class="font-medium text-violet-700 mt-3">OmniSphere</span>
+            <span class="text-xs text-gray-500 mt-1">E-Commerce Platform</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-violet-300 to-violet-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </a>
+      </div>
+    </div>
+
     <!-- Supercharged Social Connection Section -->
     <div class="max-w-4xl mx-auto w-full px-4 py-16 text-center">
       <div class="mb-12">
@@ -305,11 +365,14 @@ export class HomeComponent {
     ],
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+  ) {
     this.skillForm = this.fb.group({
-      who: ['', [Validators.required, Validators.minLength(1)]],
-      what: ['', [Validators.required, Validators.minLength(1)]],
-      why: ['', [Validators.required, Validators.minLength(1)]],
+      who: [''],
+      what: [''],
+      why: [''],
     });
   }
 
@@ -317,12 +380,8 @@ export class HomeComponent {
     console.log(this.skillForm);
     if (this.skillForm.valid) {
       const { who, what, why } = this.skillForm.value;
-      const key = `${who}|${what}|${why}`;
-      this.suggestions = this.dummySuggestions[key] || [
-        'Explore more resources on our blog',
-        'Connect with a mentor today',
-        'Download our free guide to next steps',
-      ];
+      const url = `https://inquizitive.prasunchakra.com/?who=${encodeURIComponent(who)}&what=${encodeURIComponent(what)}&why=${encodeURIComponent(why)}`;
+      window.open(url, '_blank');
     } else {
       this.suggestions = ['Please fill in all fields'];
     }
