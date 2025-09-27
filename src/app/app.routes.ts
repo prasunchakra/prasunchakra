@@ -3,7 +3,6 @@ import { HomeComponent } from './primary/components/home.component';
 import { SupportComponent } from './primary/components/support.component';
 import { TermsServiceComponent } from './primary/components/terms-service.component';
 import { PrivacyPolicyComponent } from './primary/components/privacy-policy.component';
-import { ProjectDetailsComponent } from './primary/components/project-details.component';
 
 export const routes: Routes = [
   {
@@ -26,11 +25,7 @@ export const routes: Routes = [
     title: 'PrasunChakra',
     component: SupportComponent,
   },
-  {
-    path: 'project-details',
-    title: 'Project Details',
-    component: ProjectDetailsComponent,
-  },
+  
   {
     path: '**',
     title: 'PrasunChakra',
