@@ -21,7 +21,7 @@ import { PROJECTS } from '../data/projects';
           I'm <span class="poppins text-violet-400">Prasun Chakra</span>borty.
         </h2>
         <h2 class="text-2xl font-bold text-center text-gray-300 mb-6">
-         <span class="poppins text-violet-400">Building in Public</span> demonstrating that engineering excellence can be applied to problems of any size.
+         On a mission to tackle grand challenges through <span class="poppins text-violet-400">small but impactful applications</span>.
         </h2>
       </div>
       <!-- Add any additional content here -->
@@ -63,7 +63,7 @@ import { PROJECTS } from '../data/projects';
           Join the Journey
         </h3>
         <p class="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-          Whether you contribute code, share ideas, test applications, or simply follow along, you're part of this mission. Together, we're proving that small applications can create big changes, and that the best solutions emerge when engineers collaborate openly.
+          In the era of AI where choices multiply, complexity overwhelms and low quality outputs are rocketing. We need <span class="text-violet-400 font-semibold">nimble, human‑centered tools</span> that help real people solve real problems. Whether you contribute code, share ideas, test applications, or simply follow along, you're part of this mission. Together, we're proving that <span class="text-violet-400 font-semibold">small applications can create big changes</span>, and that the best solutions emerge when engineers collaborate openly.
         </p>
       </div>
       
