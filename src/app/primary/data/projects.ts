@@ -5,40 +5,29 @@ export interface Project {
   description: string;
   iconClass?: string;
   logoUrl?: string;
+  previewUrl?: string;
   githubUrl?: string;
   liveUrl?: string;
 }
 
 export const PROJECTS: Project[] = [
   {
-    slug: 'xtodo',
-    name: 'XTodo',
-    shortDescription: 'Unlock peak productivity with a modern, intelligent, and AI-powered task manager along with a touch of human expertise',
+    slug: 'areteshala',
+    name: 'AreteShala',
+    shortDescription: 'From Chaos to Clarity: Master Your Career Journey',
     description:
-      'Modern, feature-rich todo app built with Angular 20, PrimeNG, and Tailwind CSS. Organize tasks, manage projects, and track productivity with smart filtering, a stats dashboard, and a responsive UI. Local storage by default, easily extendable to APIs. Fast, elegant, and open source.',
-    iconClass: 'fa-solid fa-list-check',
-    githubUrl: 'https://github.com/prasunchakra/xtodo',
-    liveUrl: 'https://xtodo.prasunchakra.com'
+      'Master your interview and career journey with comprehensive tools and real-time AI coaching. Build your professional profile, prep for exams and interviews, and unlock personalized career guidance—from chaos to clarity.',
+    iconClass: 'fa-solid fa-graduation-cap',
+    liveUrl: 'https://www.areteshala.com'
   },
   {
-    slug: 'yexam',
-    name: 'YExam',
-    shortDescription: 'Master exams with the ultimate practice platform offering tailored mocks, expert insights and custom support.',
+    slug: 'karmakanban',
+    name: 'KarmaKanban',
+    shortDescription: 'Transform Your Actions Into Achievement',
     description:
-      'An AI-powered exam preparation platform that helps students prepare for exams with tailored mocks and expert insights.',
-    iconClass: 'fa-solid fa-file-pen',
-    githubUrl: 'https://github.com/prasunchakra/yexam',
-    liveUrl: 'https://yexam.prasunchakra.com'
-  },
-  {
-    slug: 'zfarming',
-    name: 'ZFarming',
-    shortDescription: 'Harness the power of AI to revolutionize your urban gardening. Overcome various challenges and enjoy farming as a rewarding hobby.',
-    description:
-      'An AI-powered urban gardening platform that helps everyone optimize their operations with tailored insights and expert support.',
-    iconClass: 'fa-solid fa-wheat-awn',
-    githubUrl: 'https://github.com/prasunchakra/zfarming',
-    liveUrl: 'https://zfarming.prasunchakra.com'
+      'AI-powered productivity and goal-tracking platform that evolves with you. Transform your actions into achievement with visual kanban boards, behavioral insights, and personalized planning based on your unique patterns. Go beyond generic productivity and embrace human-centric growth.',
+    iconClass: 'fa-solid fa-infinity',
+    liveUrl: 'https://karmakanban.com'
   },
 ];
 

@@ -20,77 +20,84 @@ import { Component } from '@angular/core';
         <section class="mb-8">
           <h2 class="text-2xl font-semibold mb-4">Introduction</h2>
           <p>
-            This Privacy Policy outlines our commitment to protecting your
-            personal information. With the integration of third-party identity
-            providers such as Google, Facebook, Amazon, and Apple, we aim to
-            streamline our login process and enhance your user experience. This
-            document details how we handle data received from these services.
+            This website and its services are operated by Prasun Chakraborty, 
+            an individual developer and consultant. This Privacy Policy outlines 
+            the commitment to protecting your personal information. This document 
+            details how data is collected, used, and protected.
           </p>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-semibold mb-4">Information We Collect</h2>
+          <h2 class="text-2xl font-semibold mb-4">Information Collected</h2>
           <ul class="list-disc ml-6 space-y-2">
             <li>
-              Information you provide directly (e.g., name, email, when signing
-              up for an account).
+              Information you provide directly (e.g., name, email, when contacting 
+              for inquiries or collaboration).
             </li>
-            <li>Usage data (e.g., pages visited, actions taken).</li>
-            <li>Device and browser information.</li>
+            <li>Usage data (e.g., pages visited, time spent on site).</li>
+            <li>Device and browser information for analytics purposes.</li>
             <li>
-              Information from third parties like Google (if you use Google
-              authentication).
+              Information from third-party services if you interact with projects 
+              that use authentication providers.
             </li>
           </ul>
         </section>
 
         <section class="mb-8">
           <h2 class="text-2xl font-semibold mb-4">
-            How We Use Your Information
+            How Your Information Is Used
           </h2>
           <ul class="list-disc ml-6 space-y-2">
-            <li>To provide and improve our services.</li>
-            <li>To personalize your experience.</li>
-            <li>To communicate with you.</li>
-            <li>To protect our services and users.</li>
+            <li>To provide and improve services and projects.</li>
+            <li>To respond to inquiries and support requests.</li>
+            <li>To communicate about projects, services, or collaboration opportunities.</li>
+            <li>To analyze and improve website functionality and user experience.</li>
           </ul>
         </section>
 
         <section class="mb-8">
           <h2 class="text-2xl font-semibold mb-4">
-            How We Share Your Information
+            Sharing of Information
           </h2>
           <p>
-            We do not share your personal information with third parties without
-            your consent, except for the necessary information exchange with
-            Google, Facebook, Amazon, and Apple for the purpose of account
-            creation and linking.
+            Your personal information is not sold or shared with third parties for 
+            marketing purposes. Information may only be shared when necessary for 
+            service providers (e.g., hosting, analytics) or when required by law.
           </p>
         </section>
 
         <section class="mb-8">
           <h2 class="text-2xl font-semibold mb-4">Security</h2>
           <p>
-            We take stringent security measures to protect the information
-            received from third-party identity providers, in addition to our
-            comprehensive data protection protocols.
+            Reasonable security measures are taken to protect your information 
+            from unauthorized access, alteration, or disclosure. However, no 
+            method of internet transmission is 100% secure.
           </p>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-semibold mb-4">Changes to the Policy</h2>
+          <h2 class="text-2xl font-semibold mb-4">Your Rights</h2>
           <p>
-            Any significant changes to our use of third-party identity providers
-            or to this policy will be communicated to you through updates posted
-            on our website.
+            You have the right to request access to, correction of, or deletion 
+            of your personal information. Please contact me using the information 
+            below to exercise these rights.
           </p>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+          <h2 class="text-2xl font-semibold mb-4">Changes to This Policy</h2>
           <p>
-            If you have any questions or concerns regarding our use of
-            third-party identity providers, please contact us at
+            This Privacy Policy may be updated from time to time. Any significant 
+            changes will be posted on this website. Continued use of the website 
+            after changes constitutes acceptance of the updated policy.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+          <p>
+            If you have any questions or concerns regarding this Privacy Policy, 
+            please contact me at
             <a
               href="mailto:support&#64;prasunchakra.org"
               class="text-violet-400 hover:underline"

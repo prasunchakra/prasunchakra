@@ -18,20 +18,20 @@ import { Component } from '@angular/core';
         class="container mx-auto px-6 py-12 relative z-10 bg-slate-950/75 rounded-lg shadow-lg"
       >
         <section class="mb-8">
-          <h2 class="text-2xl font-semibold mb-4">How can we help you?</h2>
+          <h2 class="text-2xl font-semibold mb-4">How can I help you?</h2>
           <p>
-            Our dedicated support team is here to help you with any questions or
-            issues you may encounter. Whether you need assistance with a
-            project, have a question about collaboration, or just want to give
-            feedback, we're here to listen.
+            I'm here to help you with any questions or issues you may encounter. 
+            Whether you need assistance with a project, have a question about 
+            collaboration or consulting, or just want to give feedback, I'm here 
+            to listen and support you.
           </p>
         </section>
 
         <section class="mb-8">
-          <h2 class="text-2xl font-semibold mb-4">Contacting Support</h2>
+          <h2 class="text-2xl font-semibold mb-4">Getting in Touch</h2>
           <p>
-            The easiest way to get in touch with us is by emailing our support
-            team. Please send your questions or concerns to:
+            The easiest way to get in touch with me is by email. 
+            Please send your questions or concerns to:
           </p>
           <p class="mt-4">
             <a
@@ -41,7 +41,7 @@ import { Component } from '@angular/core';
             >
           </p>
           <p class="mt-4">
-            We strive to respond to all inquiries within 24-48 hours.
+            I strive to respond to all inquiries within 24-48 hours.
           </p>
         </section>
       </main>

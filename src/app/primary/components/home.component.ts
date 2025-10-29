@@ -21,7 +21,7 @@ import { PROJECTS } from '../data/projects';
           I'm <span class="poppins text-violet-400">Prasun Chakra</span>borty.
         </h2>
         <h2 class="text-2xl font-bold text-center text-gray-300 mb-6">
-         On a mission to tackle grand challenges through <span class="poppins text-violet-400">small but impactful applications</span>.
+         <span class="poppins text-violet-400">Building</span> impactful applications, <span class="poppins text-violet-400">architecting</span> solutions, and <span class="poppins text-violet-400">mentoring</span> engineers.
         </h2>
       </div>
       <!-- Add any additional content here -->
@@ -30,28 +30,49 @@ import { PROJECTS } from '../data/projects';
     <!-- Projects Section -->
     <section class="flex flex-col gap-10 py-10" id="projects">
       <h3 class="text-center font-semibold text-3xl sm:text-4xl md:text-5xl">Projects</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <div
           *ngFor="let p of projects"
-          class="p-5 rounded-lg border border-violet-800 hover:border-violet-400 duration-200 bg-slate-950/60 group shadow-sm hover:shadow-lg hover:shadow-violet-900/20"
+          class="rounded-lg border border-violet-800 hover:border-violet-400 duration-300 bg-slate-950/60 group shadow-sm hover:shadow-xl hover:shadow-violet-900/30 overflow-hidden flex flex-col"
         >
-          <div class="flex items-center gap-3 mb-3">
-            <i *ngIf="p.iconClass" [class]="p.iconClass + ' text-3xl text-violet-400' "></i>
-            <img *ngIf="p.logoUrl" [src]="p.logoUrl" alt="{{p.name}} logo" class="h-8 w-8" />
-            <h4 class="font-medium text-xl">{{ p.name }}</h4>
+          <!-- Live Website Preview -->
+          <div *ngIf="p.liveUrl" class="relative w-full h-48 overflow-hidden bg-slate-900">
+            <img 
+              [src]="getScreenshotUrl(p.liveUrl)" 
+              [alt]="p.name + ' live preview'"
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+              (error)="handleImageError($event, p.name)"
+            />
+            <div class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-md font-medium flex items-center gap-1">
+              <span class="inline-block w-2 h-2 bg-white rounded-full animate-pulse"></span>
+              LIVE
+            </div>
           </div>
-          <p class="text-gray-300">{{ p.shortDescription }}</p>
-          <div class="flex items-center justify-between mt-5">
-            <a *ngIf="p.githubUrl" [href]="p.githubUrl" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white text-slate-950 hover:bg-gray-100">
-              <i class="fab fa-github text-lg"></i>
-              <span>GitHub</span>
-            </a>
-            <a *ngIf="p.liveUrl" [href]="p.liveUrl" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-violet-600 text-white hover:bg-violet-500">
-              <i class="fa-solid fa-globe text-lg"></i>
-              <span>Website</span>
-            </a>
+          
+          <!-- Content -->
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center gap-3 mb-3">
+              <i *ngIf="p.iconClass" [class]="p.iconClass + ' text-2xl text-violet-400'"></i>
+              <img *ngIf="p.logoUrl" [src]="p.logoUrl" alt="{{p.name}} logo" class="h-7 w-7" />
+              <h4 class="font-semibold text-xl">{{ p.name }}</h4>
+            </div>
+            <p class="text-gray-400 text-sm mb-2 font-medium">{{ p.shortDescription }}</p>
+            <p class="text-gray-300 flex-grow">{{ p.description }}</p>
+            
+            <!-- Buttons -->
+            <div class="flex items-center gap-3 mt-6">
+              <a *ngIf="p.githubUrl" [href]="p.githubUrl" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-white text-slate-950 hover:bg-gray-100 font-medium transition-colors">
+                <i class="fab fa-github text-lg"></i>
+                <span>GitHub</span>
+              </a>
+              <a *ngIf="p.liveUrl" [href]="p.liveUrl" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-violet-600 text-white hover:bg-violet-500 font-medium transition-colors">
+                <i class="fa-solid fa-globe text-lg"></i>
+                <span>Visit Site</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -60,10 +81,10 @@ import { PROJECTS } from '../data/projects';
     <section class="py-16 lg:py-20">
       <div class="text-center mb-12">
         <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-violet-300">
-          Join the Journey
+          Let's Build Together
         </h3>
         <p class="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-          In the era of AI where choices multiply, complexity overwhelms and low quality outputs are rocketing. We need <span class="text-violet-400 font-semibold">nimble, human‑centered tools</span> that help real people solve real problems. Whether you contribute code, share ideas, test applications, or simply follow along, you're part of this mission. Together, we're proving that <span class="text-violet-400 font-semibold">small applications can create big changes</span>, and that the best solutions emerge when engineers collaborate openly.
+          <span class="text-violet-400 font-semibold">Have an idea?</span> Let's build it together. I help you turn concepts into working products by strategy, design, <span class="text-violet-400 font-semibold">full-stack implementation</span>, and beyond. Reach out for consulting, product architecture, or deep <span class="text-violet-400 font-semibold">technical mentorship</span>.
         </p>
       </div>
       
@@ -102,4 +123,14 @@ import { PROJECTS } from '../data/projects';
 })
 export class HomeComponent {
   projects = PROJECTS;
+
+  getScreenshotUrl(url: string): string {
+    // Using WordPress mshots service for live website screenshots
+    return `https://s.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=800&h=600`;
+  }
+
+  handleImageError(event: Event, projectName: string): void {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.src = `https://via.placeholder.com/800x600/1e293b/8b5cf6?text=${encodeURIComponent(projectName)}`;
+  }
 }

@@ -18,12 +18,21 @@ import { Component } from '@angular/core';
         class="container mx-auto px-6 py-12 relative z-10 bg-slate-950/75 rounded-lg shadow-lg"
       >
         <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">About</h2>
+          <p>
+            This website and its services are operated by Prasun Chakraborty, 
+            an individual developer and consultant. These terms govern your use 
+            of the website, projects, and services provided.
+          </p>
+        </section>
+
+        <section class="mb-8">
           <h2 class="text-2xl font-semibold mb-4">Acceptance of Terms</h2>
           <p>
-            By accessing our website, contributing to our projects, or using our
+            By accessing this website, contributing to projects, or using the
             services, you confirm that you have read, understood, and agreed to
             be bound by these Terms of Service. If you do not agree with any
-            part of these terms, you must not use our services.
+            part of these terms, you must not use the services.
           </p>
         </section>
 
@@ -43,9 +52,9 @@ import { Component } from '@angular/core';
           <ul class="list-disc ml-6 space-y-2">
             <li>
               Ownership: Contributors retain ownership of their original
-              contributions. By contributing, you grant us a non-exclusive,
+              contributions. By contributing, you grant a non-exclusive,
               worldwide, royalty-free license to use your contributions in
-              connection with the platform.
+              connection with the projects and services.
             </li>
             <li>
               Open Source Licensing: Contributions are subject to the project's
@@ -59,42 +68,42 @@ import { Component } from '@angular/core';
           <h2 class="text-2xl font-semibold mb-4">Intellectual Property</h2>
           <p>
             Your content remains yours. However, by posting or sharing, you
-            provide us a license to use it for the platform's operation. Our
-            original content and features are protected and are our exclusive
-            property.
+            provide a license to use it for the operation of projects and services. 
+            Original content and features created by Prasun Chakraborty are protected 
+            by intellectual property rights.
           </p>
         </section>
 
         <section class="mb-8">
           <h2 class="text-2xl font-semibold mb-4">Disclaimers</h2>
           <p>
-            The platform is provided on an "as is" basis without any warranties,
-            express or implied. We disclaim all warranties, including for
-            fitness for a particular purpose or non-infringement.
+            The website, projects, and services are provided on an "as is" basis 
+            without any warranties, express or implied. All warranties are disclaimed, 
+            including for fitness for a particular purpose or non-infringement.
           </p>
         </section>
 
         <section class="mb-8">
           <h2 class="text-2xl font-semibold mb-4">Limitation of Liability</h2>
           <p>
-            We shall not be liable for any indirect or consequential damages
-            resulting from your use of the platform.
+            To the fullest extent permitted by law, Prasun Chakraborty shall not 
+            be liable for any indirect, incidental, or consequential damages 
+            resulting from your use of the website, projects, or services.
           </p>
         </section>
 
         <section class="mb-8">
           <h2 class="text-2xl font-semibold mb-4">Changes to the Terms</h2>
           <p>
-            We reserve the right to modify these terms at any time. By
-            continuing to use the platform after changes are made, you agree to
-            the revised terms.
+            These terms may be modified at any time. By continuing to use the 
+            website or services after changes are made, you agree to the revised terms.
           </p>
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+          <h2 class="text-2xl font-semibold mb-4">Contact</h2>
           <p>
-            If you have questions about these Terms, please contact us at
+            If you have questions about these Terms, please contact me at
             <a
               href="mailto:support&#64;prasunchakra.org"
               class="text-violet-400 hover:underline"
