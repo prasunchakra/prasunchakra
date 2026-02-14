@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -44,7 +48,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  
+
   /* Custom Cyber Colors */
   --color-cyber-green: var(--cyber-green);
   --color-cyber-green-glow: var(--cyber-green-glow);
@@ -55,7 +59,7 @@
 
 :root {
   --radius: 0.5rem;
-  
+
   /* Cyber-Minimalist Theme - Dark Mode Default */
   --background: oklch(0.11 0.01 240);
   --foreground: oklch(0.93 0.01 240);
@@ -75,21 +79,21 @@
   --border: oklch(0.25 0.02 240);
   --input: oklch(0.20 0.02 240);
   --ring: oklch(0.72 0.19 160);
-  
+
   /* Chart Colors */
   --chart-1: oklch(0.72 0.19 160);
   --chart-2: oklch(0.65 0.15 200);
   --chart-3: oklch(0.60 0.12 240);
   --chart-4: oklch(0.70 0.18 280);
   --chart-5: oklch(0.65 0.20 320);
-  
+
   /* Cyber Theme Specific */
   --cyber-green: oklch(0.72 0.19 160);
   --cyber-green-glow: oklch(0.80 0.22 160);
   --cyber-slate: oklch(0.20 0.02 240);
   --cyber-slate-dark: oklch(0.11 0.01 240);
   --cyber-terminal: oklch(0.16 0.01 240);
-  
+
   /* Sidebar */
   --sidebar: oklch(0.13 0.01 240);
   --sidebar-foreground: oklch(0.93 0.01 240);
@@ -105,11 +109,12 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
-  
+
   ::selection {
     background: oklch(0.72 0.19 160 / 0.3);
     color: oklch(0.93 0.01 240);
@@ -138,22 +143,22 @@
 /* Glow Effects */
 .glow-green {
   box-shadow: 0 0 20px oklch(0.72 0.19 160 / 0.3),
-              0 0 40px oklch(0.72 0.19 160 / 0.1);
+    0 0 40px oklch(0.72 0.19 160 / 0.1);
 }
 
 .glow-green-text {
   text-shadow: 0 0 10px oklch(0.72 0.19 160 / 0.5),
-               0 0 20px oklch(0.72 0.19 160 / 0.3);
+    0 0 20px oklch(0.72 0.19 160 / 0.3);
 }
 
 .glow-green-border {
   box-shadow: inset 0 0 20px oklch(0.72 0.19 160 / 0.1),
-              0 0 20px oklch(0.72 0.19 160 / 0.1);
+    0 0 20px oklch(0.72 0.19 160 / 0.1);
 }
 
 /* Grid Background Pattern */
 .cyber-grid {
-  background-image: 
+  background-image:
     linear-gradient(oklch(0.25 0.02 240 / 0.3) 1px, transparent 1px),
     linear-gradient(90deg, oklch(0.25 0.02 240 / 0.3) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -203,6 +208,7 @@
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(100vh);
   }
@@ -215,12 +221,10 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    oklch(0.72 0.19 160 / 0.1),
-    transparent
-  );
+  background: linear-gradient(180deg,
+      transparent,
+      oklch(0.72 0.19 160 / 0.1),
+      transparent);
   animation: scanline 8s linear infinite;
   pointer-events: none;
   z-index: 999;
@@ -228,8 +232,16 @@
 
 /* Typing cursor */
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .cursor-blink {
@@ -238,8 +250,15 @@
 
 /* Fade in animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fade-in {
@@ -252,4 +271,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Tech icon hover color via CSS custom property */
+.tech-icon-card:hover .tech-icon {
+  color: var(--icon-hover-color);
 }

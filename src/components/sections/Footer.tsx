@@ -12,7 +12,7 @@ export function Footer() {
                     <div className="flex items-center gap-4">
                         <div className="relative w-8 h-8 rounded-lg overflow-hidden">
                             <img
-                                src="/logo.png"
+                                src={`${import.meta.env.BASE_URL}logo.png`}
                                 alt="Logo"
                                 className="w-full h-full object-cover"
                             />

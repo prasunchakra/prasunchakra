@@ -127,33 +127,42 @@ export const technologies = [
     { name: "React", icon: "react" },
 ] as const;
 
-// Articles/Posts with LinkedIn links
-export const articles = [
+// Featured Projects
+export const projects = [
     {
-        "title": "The Fundamentals of Security: Why Simplicity Still Wins",
-        "excerpt": "A reminder that true cybersecurity isn’t about overengineering or chasing trends—it’s about sound principles, economic thinking, and layered defense.",
-        "category": "Security",
-        "date": "Feb 2026",
-        "readTime": "6 min",
-        url: "https://www.linkedin.com/posts/prasunchakra_as-we-scale-systems-its-easy-to-over-engineer-activity-7418645984454324224-Qtf0?utm_source=share&utm_medium=member_desktop&rcm=ACoAACBFwG4BHzk2JDVC1m9whNYZSCRNtXXnDhc",
+        name: "Project Alpha",
+        description: "A brief description of the project and what it does. Replace with your actual project details.",
+        techStack: ["React", "Node.js", "PostgreSQL"],
+        liveUrl: "",
+        githubUrl: "https://github.com/prasunchakra",
+        image: "/placeholder-project.png",
     },
     {
-        "title": "The Supply Chain Vulnerability: When Your Vendor Gets Hacked",
-        "excerpt": "The Mixpanel–OpenAI incident shows that even if your own systems are secure, leaking raw user data to third-party tools can still cost you your users' trust.",
-        "category": "Security",
-        "date": "Nov 2025",
-        "readTime": "7 min",
-        url: "https://www.linkedin.com/posts/prasunchakra_systemdesign-softwarearchitecture-cybersecurity-activity-7401809915268534272-uIZQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACBFwG4BHzk2JDVC1m9whNYZSCRNtXXnDhc",
+        name: "Project Beta",
+        description: "A brief description of the project and what it does. Replace with your actual project details.",
+        techStack: ["Python", "Kafka", "AWS"],
+        liveUrl: "",
+        githubUrl: "https://github.com/prasunchakra",
+        image: "/placeholder-project.png",
     },
     {
-        "title": "When Type Confusion Turns JavaScript into a Weapon",
-        "excerpt": "A critical V8 type confusion bug shows how small assumptions about types can escalate into memory corruption, sandbox escapes, and full system compromise across Chrome and Node.js.",
-        "category": "Security",
-        "date": "Feb 2026",
-        "readTime": "8 min",
-        url: "https://www.linkedin.com/posts/prasunchakra_cybersecurity-javascript-v8-activity-7398583368801665027-M36v?utm_source=share&utm_medium=member_desktop&rcm=ACoAACBFwG4BHzk2JDVC1m9whNYZSCRNtXXnDhc",
-    }
+        name: "Project Gamma",
+        description: "A brief description of the project and what it does. Replace with your actual project details.",
+        techStack: ["TypeScript", "Kubernetes", "GCP"],
+        liveUrl: "",
+        githubUrl: "https://github.com/prasunchakra",
+        image: "/placeholder-project.png",
+    },
+    {
+        name: "Project Delta",
+        description: "A brief description of the project and what it does. Replace with your actual project details.",
+        techStack: ["gRPC", "Redis", "Docker"],
+        liveUrl: "",
+        githubUrl: "https://github.com/prasunchakra",
+        image: "/placeholder-project.png",
+    },
 ] as const;
+
 
 // Research interests - clickable to Google search
 export const researchInterests = [
@@ -171,3 +180,40 @@ export const socialLinks = {
     linkedin: "https://www.linkedin.com/in/prasunchakra/",
     github: "https://github.com/prasunchakra",
 } as const;
+
+// Articles/Posts with LinkedIn links
+export const articles = [
+    {
+        "title": "REST APIs from Architectures to Status Codes",
+        "excerpt": "A deep dive into REST APIs, covering their architecture, design principles, and common status codes.",
+        "category": "Web",
+        "date": "Feb 2026",
+        "readTime": "14 min",
+        url: "https://dev.to/prasunchakra/demystifying-the-web-3-rest-api-1nn",
+    },
+    {
+        "title": "The Language of the Internet",
+        "excerpt": "Let's explore the core languages of the internet the network protocols that make it all possible.",
+        "category": "Web",
+        "date": "Feb 2026",
+        "readTime": "6 min",
+        url: "https://dev.to/prasunchakra/demystifying-the-web-2-the-language-of-the-internet-2bpp",
+    },
+    {
+        "title": "The Journey of a web page",
+        "excerpt": "Ever wondered how a web page travels from a server to your browser? Let’s break down the journey of a web page.",
+        "category": "Web",
+        "date": "Feb 2026",
+        "readTime": "7 min",
+        url: "https://dev.to/prasunchakra/demystifying-the-web-episode-1-the-journey-of-a-web-page-from-browser-to-screen-4dbh",
+    },
+    {
+        "title": "Become the Engineer Everyone Wants on Their Team: A Roadmap to Career Mastery",
+        "excerpt": "In today’s competitive tech landscape, simply being a good coder isn’t enough to stand out. To truly excel and become the engineer everyone wants on their team, you need a blend of technical depth, strategic thinking, and strong interpersonal skills.",
+        "category": "Career",
+        "date": "Jul 2025",
+        "readTime": "5 min",
+        url: "https://medium.com/@prasunchakra/become-the-engineer-everyone-wants-on-their-team-a-roadmap-to-career-mastery-10985a4207ef"
+    }
+
+] as const;

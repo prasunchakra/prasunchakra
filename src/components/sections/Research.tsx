@@ -2,14 +2,20 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-    FileText,
-    ArrowUpRight,
-    Calendar,
+    FileCode2,
+    Award,
     Lightbulb,
     Search,
 } from "lucide-react";
-import { FaTwitter, FaLinkedin } from "react-icons/fa";
-import { articles, researchInterests, socialLinks } from "./constants";
+import { FaTwitter, FaAws } from "react-icons/fa";
+import { SiGooglecloud } from "react-icons/si";
+import { philosophyPoints, certifications, researchInterests, socialLinks } from "./constants";
+
+// Provider icon mapping
+const providerIcons = {
+    aws: { icon: FaAws, color: "text-orange-400" },
+    gcp: { icon: SiGooglecloud, color: "text-blue-400" },
+} as const;
 
 // Helper to create Google search URL
 const getGoogleSearchUrl = (topic: string) => {
@@ -49,61 +55,99 @@ export function Research() {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-3 gap-8">
-                    {/* Articles Grid */}
+                    {/* Left - Terminal, Approach & Credentials */}
                     <div className="lg:col-span-2 space-y-6">
-                        {articles.map((article, index) => (
-                            <motion.a
-                                key={article.title}
-                                href={article.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.6, delay: 0.1 * index }}
-                                className="group block p-6 bg-card/30 rounded-xl border border-border hover:border-primary/30 transition-all"
-                            >
-                                <div className="flex items-start justify-between gap-4">
-                                    <div className="flex-1">
-                                        <div className="flex items-center gap-3 mb-3">
-                                            <span className="px-2 py-1 text-xs terminal-text bg-primary/10 text-primary rounded">
-                                                {article.category}
-                                            </span>
-                                            <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                                                <Calendar className="w-3 h-3" />
-                                                {article.date}
-                                            </span>
-                                            <span className="text-xs text-muted-foreground">
-                                                • {article.readTime}
-                                            </span>
-                                        </div>
-                                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
-                                            {article.title}
-                                        </h3>
-                                        <p className="text-sm text-muted-foreground leading-relaxed">
-                                            {article.excerpt}
-                                        </p>
-                                    </div>
-                                    <div className="flex items-center gap-2 flex-shrink-0">
-                                        <FaLinkedin className="w-4 h-4 text-blue-400 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                        <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                                    </div>
-                                </div>
-                            </motion.a>
-                        ))}
-
-                        <motion.a
-                            initial={{ opacity: 0 }}
-                            animate={isInView ? { opacity: 1 } : {}}
-                            transition={{ delay: 0.6 }}
-                            href={socialLinks.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group mt-4"
+                        {/* Terminal Window */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : {}}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="bg-cyber-terminal rounded-xl border border-border overflow-hidden"
                         >
-                            <FileText className="w-4 h-4" />
-                            <span>View all articles on LinkedIn</span>
-                            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                        </motion.a>
+                            <div className="flex items-center gap-2 px-4 py-3 bg-card border-b border-border">
+                                <div className="w-3 h-3 rounded-full bg-red-500/70" />
+                                <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                                <div className="w-3 h-3 rounded-full bg-green-500/70" />
+                                <span className="ml-2 text-xs text-muted-foreground terminal-text">
+                                    ~/about/whoami
+                                </span>
+                            </div>
+                            <div className="p-6 terminal-text text-sm leading-relaxed">
+                                <p className="text-muted-foreground mb-4">
+                                    <span className="text-primary">$</span> cat philosophy.md
+                                </p>
+                                <div className="space-y-3 text-foreground/90">
+                                    {philosophyPoints.map((point, index) => (
+                                        <motion.div
+                                            key={index}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            animate={isInView ? { opacity: 1, x: 0 } : {}}
+                                            transition={{ delay: 0.4 + index * 0.1 }}
+                                            className="flex items-start gap-2"
+                                        >
+                                            <span className="text-primary mt-1">▸</span>
+                                            <span>{point}</span>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Approach Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ delay: 0.6 }}
+                            className="p-6 bg-card/50 rounded-xl border border-border"
+                        >
+                            <div className="flex items-center gap-3 mb-4">
+                                <FileCode2 className="w-5 h-5 text-primary" />
+                                <h3 className="font-semibold text-foreground">My Approach</h3>
+                            </div>
+                            <p className="text-muted-foreground text-sm leading-relaxed">
+                                I focus on building software that is secure and doesn&apos;t break when traffic
+                                increases. Whether I am working on microservices, cloud setup,
+                                or security protocols, I always try to understand the logic behind the design
+                                first. This research-based approach has helped me build systems
+                                that handle 75k+ hits per second without crashing or having security gaps.
+                                For me, it is not just about finishing a task, but making sure the foundation
+                                is solid for the long run.
+                            </p>
+                        </motion.div>
+
+                        {/* Credentials */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ delay: 0.7 }}
+                            className="p-5 bg-card/50 rounded-xl border border-border"
+                        >
+                            <div className="flex items-center gap-2 mb-4">
+                                <Award className="w-4 h-4 text-amber-400" />
+                                <h4 className="text-sm font-semibold text-foreground">Credentials</h4>
+                            </div>
+                            <div className="space-y-3">
+                                {certifications.map((cert, index) => {
+                                    const ProviderIcon = providerIcons[cert.provider].icon;
+                                    const iconColor = providerIcons[cert.provider].color;
+                                    return (
+                                        <motion.div
+                                            key={cert.name}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            animate={isInView ? { opacity: 1, x: 0 } : {}}
+                                            transition={{ delay: 0.8 + index * 0.1 }}
+                                            className="group flex items-center gap-3 p-3 rounded-lg bg-background/50 border border-border/50 hover:border-amber-500/30 transition-all"
+                                        >
+                                            <ProviderIcon className={`w-6 h-6 ${iconColor}`} />
+                                            <div className="flex-1 min-w-0">
+                                                <p className="text-sm font-medium text-foreground">{cert.name}</p>
+                                                <p className="text-xs text-muted-foreground">{cert.issuer}</p>
+                                            </div>
+                                        </motion.div>
+                                    );
+                                })}
+                            </div>
+                        </motion.div>
                     </div>
 
                     {/* Sidebar */}

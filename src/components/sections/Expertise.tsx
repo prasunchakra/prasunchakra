@@ -24,19 +24,20 @@ import { VscSymbolMethod } from "react-icons/vsc";
 import { technologies, expertiseAreas } from "./constants";
 
 // Technology icon mapping
-const techIcons: Record<string, { icon: React.ComponentType<{ className?: string }>; color: string }> = {
-    typescript: { icon: SiTypescript, color: "text-blue-400" },
-    python: { icon: SiPython, color: "text-yellow-400" },
-    nodejs: { icon: FaNodeJs, color: "text-green-500" },
-    kubernetes: { icon: SiKubernetes, color: "text-blue-500" },
-    pyspark: { icon: SiApachespark, color: "text-orange-500" },
-    postgresql: { icon: SiPostgresql, color: "text-sky-400" },
-    redis: { icon: SiRedis, color: "text-red-400" },
-    aws: { icon: FaAws, color: "text-orange-400" },
-    gcp: { icon: SiGooglecloud, color: "text-blue-400" },
-    kafka: { icon: SiApachekafka, color: "text-slate-300" },
-    grpc: { icon: VscSymbolMethod, color: "text-teal-400" },
-    react: { icon: SiReact, color: "text-cyan-400" },
+// Technology icon mapping with CSS color values for hover
+const techIcons: Record<string, { icon: React.ComponentType<{ className?: string }>; hoverColor: string }> = {
+    typescript: { icon: SiTypescript, hoverColor: "#60a5fa" },
+    python: { icon: SiPython, hoverColor: "#facc15" },
+    nodejs: { icon: FaNodeJs, hoverColor: "#22c55e" },
+    kubernetes: { icon: SiKubernetes, hoverColor: "#3b82f6" },
+    pyspark: { icon: SiApachespark, hoverColor: "#f97316" },
+    postgresql: { icon: SiPostgresql, hoverColor: "#38bdf8" },
+    redis: { icon: SiRedis, hoverColor: "#f87171" },
+    aws: { icon: FaAws, hoverColor: "#fb923c" },
+    gcp: { icon: SiGooglecloud, hoverColor: "#60a5fa" },
+    kafka: { icon: SiApachekafka, hoverColor: "#cbd5e1" },
+    grpc: { icon: VscSymbolMethod, hoverColor: "#2dd4bf" },
+    react: { icon: SiReact, hoverColor: "#22d3ee" },
 };
 
 // Expertise area icon mapping
@@ -137,16 +138,18 @@ export function Expertise() {
                             const techIcon = techIcons[tech.icon];
                             if (!techIcon) return null;
                             const TechIcon = techIcon.icon;
-                            const iconColor = techIcon.color;
                             return (
                                 <motion.div
                                     key={tech.name}
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                                     transition={{ delay: 0.6 + index * 0.05 }}
-                                    className="flex flex-col items-center gap-2 p-4 rounded-lg bg-background/50 border border-border/50 hover:border-primary/30 hover:bg-primary/5 transition-all group cursor-default"
+                                    className="tech-icon-card flex flex-col items-center gap-2 p-4 rounded-lg bg-background/50 border border-border/50 hover:border-primary/30 hover:bg-primary/5 transition-all group cursor-default"
+                                    style={{ "--icon-hover-color": techIcon.hoverColor } as React.CSSProperties}
                                 >
-                                    <TechIcon className={`w-6 h-6 text-muted-foreground group-hover:${iconColor} transition-colors`} />
+                                    <span className="tech-icon w-6 h-6 text-muted-foreground transition-colors">
+                                        <TechIcon className="w-6 h-6" />
+                                    </span>
                                     <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors text-center">
                                         {tech.name}
                                     </span>

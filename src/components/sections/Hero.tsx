@@ -159,7 +159,7 @@ export function Hero() {
                             <div className="absolute inset-0 bg-primary/20 rounded-full blur-[64px]" />
                             <div className="relative w-full h-full rounded-full border border-border/50 overflow-hidden glow-green-border">
                                 <img
-                                    src="/logo.png"
+                                    src={`${import.meta.env.BASE_URL}logo.png`}
                                     alt="Prasun Chakraborty"
                                     className="w-full h-full object-cover"
                                 />

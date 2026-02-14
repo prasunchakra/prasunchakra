@@ -38,7 +38,7 @@ export function Navigation() {
                         <a href="/" className="flex items-center gap-3 group">
                             <div className="relative w-10 h-10 overflow-hidden rounded-lg glow-green-border">
                                 <img
-                                    src="/logo.gif"
+                                    src={`${import.meta.env.BASE_URL}logo.gif`}
                                     alt="Logo"
                                     className="w-full h-full object-cover"
                                 />

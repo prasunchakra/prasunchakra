@@ -3,6 +3,7 @@ import {
     Hero,
     About,
     Expertise,
+    Projects,
     Research,
     Contact,
     Footer,
@@ -15,6 +16,7 @@ function App() {
             <Hero />
             <About />
             <Expertise />
+            <Projects />
             <Research />
             <Contact />
             <Footer />

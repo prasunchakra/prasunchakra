@@ -1,20 +1,21 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Terminal, ArrowUpRight, FileCode2, Briefcase, GraduationCap, Award } from "lucide-react";
-import { FaAws } from "react-icons/fa";
-import { SiGooglecloud } from "react-icons/si";
-import { journey, philosophyPoints, certifications, type JourneyItem } from "./constants";
+import { useRef, useState } from "react";
+import { ArrowUpRight, Calendar, FileText, Briefcase, GraduationCap, Terminal, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { journey, articles, type JourneyItem } from "./constants";
 
-// Provider icon mapping
-const providerIcons = {
-    aws: { icon: FaAws, color: "text-orange-400" },
-    gcp: { icon: SiGooglecloud, color: "text-blue-400" },
-} as const;
+const ARTICLES_PER_PAGE = 5;
 
 export function About() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const [currentPage, setCurrentPage] = useState(0);
+
+    const totalPages = Math.ceil(articles.length / ARTICLES_PER_PAGE);
+    const paginatedArticles = articles.slice(
+        currentPage * ARTICLES_PER_PAGE,
+        (currentPage + 1) * ARTICLES_PER_PAGE
+    );
 
     const getItemStyles = (type: JourneyItem["type"]) => {
         if (type === "education") {
@@ -64,98 +65,104 @@ export function About() {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-2 gap-16">
-                    {/* Left - Story */}
+                    {/* Left - Articles */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        {/* Terminal Window */}
-                        <div className="bg-cyber-terminal rounded-xl border border-border overflow-hidden mb-8">
-                            <div className="flex items-center gap-2 px-4 py-3 bg-card border-b border-border">
-                                <div className="w-3 h-3 rounded-full bg-red-500/70" />
-                                <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-                                <div className="w-3 h-3 rounded-full bg-green-500/70" />
-                                <span className="ml-2 text-xs text-muted-foreground terminal-text">
-                                    ~/about/whoami
+                        {/* Column Title */}
+                        <div className="flex items-center justify-between mb-8">
+                            <div className="flex items-center gap-3">
+                                <FileText className="w-5 h-5 text-primary" />
+                                <h3 className="text-xl font-semibold text-foreground">My Writings</h3>
+                            </div>
+                            {totalPages > 1 && (
+                                <span className="text-xs text-muted-foreground terminal-text">
+                                    {currentPage + 1}/{totalPages}
                                 </span>
-                            </div>
-                            <div className="p-6 terminal-text text-sm leading-relaxed">
-                                <p className="text-muted-foreground mb-4">
-                                    <span className="text-primary">$</span> cat philosophy.md
-                                </p>
-                                <div className="space-y-3 text-foreground/90">
-                                    {philosophyPoints.map((point, index) => (
-                                        <motion.div
-                                            key={index}
-                                            initial={{ opacity: 0, x: -10 }}
-                                            animate={isInView ? { opacity: 1, x: 0 } : {}}
-                                            transition={{ delay: 0.4 + index * 0.1 }}
-                                            className="flex items-start gap-2"
-                                        >
-                                            <span className="text-primary mt-1">▸</span>
-                                            <span>{point}</span>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </div>
+                            )}
                         </div>
 
-                        {/* Approach Card */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ delay: 0.6 }}
-                            className="p-6 bg-card/50 rounded-xl border border-border"
-                        >
-                            <div className="flex items-center gap-3 mb-4">
-                                <FileCode2 className="w-5 h-5 text-primary" />
-                                <h3 className="font-semibold text-foreground">My Approach</h3>
-                            </div>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                                I focus on building software that is secure and doesn&apos;t break when traffic
-                                increases. Whether I am working on microservices, cloud setup,
-                                or security protocols, I always try to understand the logic behind the design
-                                first. This research-based approach has helped me build systems
-                                that handle 75k+ hits per second without crashing or having security gaps.
-                                For me, it is not just about finishing a task, but making sure the foundation
-                                is solid for the long run.
-                            </p>
-                        </motion.div>
-
-                        {/* Credentials */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ delay: 0.7 }}
-                            className="mt-6 p-5 bg-card/50 rounded-xl border border-border"
-                        >
-                            <div className="flex items-center gap-2 mb-4">
-                                <Award className="w-4 h-4 text-amber-400" />
-                                <h4 className="text-sm font-semibold text-foreground">Credentials</h4>
-                            </div>
-                            <div className="space-y-3">
-                                {certifications.map((cert, index) => {
-                                    const ProviderIcon = providerIcons[cert.provider].icon;
-                                    const iconColor = providerIcons[cert.provider].color;
-                                    return (
-                                        <motion.div
-                                            key={cert.name}
-                                            initial={{ opacity: 0, x: -10 }}
-                                            animate={isInView ? { opacity: 1, x: 0 } : {}}
-                                            transition={{ delay: 0.8 + index * 0.1 }}
-                                            className="group flex items-center gap-3 p-3 rounded-lg bg-background/50 border border-border/50 hover:border-amber-500/30 transition-all"
+                        {/* Articles List */}
+                        <div className="space-y-4 min-h-[400px]">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={currentPage}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="space-y-4"
+                                >
+                                    {paginatedArticles.map((article) => (
+                                        <a
+                                            key={article.title}
+                                            href={article.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="group block p-5 bg-card/30 rounded-xl border border-border hover:border-primary/30 transition-all"
                                         >
-                                            <ProviderIcon className={`w-6 h-6 ${iconColor}`} />
-                                            <div className="flex-1 min-w-0">
-                                                <p className="text-sm font-medium text-foreground">{cert.name}</p>
-                                                <p className="text-xs text-muted-foreground">{cert.issuer}</p>
+                                            <div className="flex items-start justify-between gap-4">
+                                                <div className="flex-1">
+                                                    <div className="flex items-center gap-3 mb-2">
+                                                        <span className="px-2 py-0.5 text-xs terminal-text bg-primary/10 text-primary rounded">
+                                                            {article.category}
+                                                        </span>
+                                                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                                                            <Calendar className="w-3 h-3" />
+                                                            {article.date}
+                                                        </span>
+                                                        <span className="text-xs text-muted-foreground">
+                                                            • {article.readTime}
+                                                        </span>
+                                                    </div>
+                                                    <h4 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-1.5">
+                                                        {article.title}
+                                                    </h4>
+                                                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                                                        {article.excerpt}
+                                                    </p>
+                                                </div>
+                                                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors" />
                                             </div>
-                                        </motion.div>
-                                    );
-                                })}
+                                        </a>
+                                    ))}
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Pagination Controls */}
+                        {totalPages > 1 && (
+                            <div className="flex items-center justify-center gap-3 mt-6">
+                                <button
+                                    onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
+                                    disabled={currentPage === 0}
+                                    className="p-1.5 rounded-lg border border-border hover:border-primary/30 text-muted-foreground hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                                >
+                                    <ChevronLeft className="w-4 h-4" />
+                                </button>
+                                <div className="flex items-center gap-2">
+                                    {Array.from({ length: totalPages }).map((_, i) => (
+                                        <button
+                                            key={i}
+                                            onClick={() => setCurrentPage(i)}
+                                            className={`w-2 h-2 rounded-full transition-all ${i === currentPage
+                                                    ? "bg-primary w-6"
+                                                    : "bg-border hover:bg-muted-foreground"
+                                                }`}
+                                        />
+                                    ))}
+                                </div>
+                                <button
+                                    onClick={() => setCurrentPage((p) => Math.min(totalPages - 1, p + 1))}
+                                    disabled={currentPage === totalPages - 1}
+                                    className="p-1.5 rounded-lg border border-border hover:border-primary/30 text-muted-foreground hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                                >
+                                    <ChevronRight className="w-4 h-4" />
+                                </button>
                             </div>
-                        </motion.div>
+                        )}
                     </motion.div>
 
                     {/* Right - Merged Timeline */}
