@@ -1,6 +1,6 @@
 <img src="./assets/header.svg" alt="Hey, I'm Prasun" />
 
-I'm an Engineering Leader and Fullstack Developer based in India, with over 10 years of experience working mostly with startups and scaleups. I lead high-performing teams and ship high-quality products.
+I'm an **Engineering Leader** and **Fullstack Developer** based in India, with over **10 years of experience** working mostly with startups and scaleups. I lead high-performing teams and ship high-quality products.
 
 🎓 Currently learning **Cyber Security** at **IIT Kanpur**.
 
