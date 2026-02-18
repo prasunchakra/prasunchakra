@@ -113,17 +113,17 @@ export function Hero() {
                             className="flex flex-wrap gap-4"
                         >
                             <a
-                                href="#expertise"
+                                href="#projects"
                                 className="group px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-all glow-green flex items-center gap-2"
                             >
-                                View Expertise
+                                Featured Projects
                                 <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
                             </a>
                             <a
-                                href="#research"
+                                href="#about"
                                 className="px-6 py-3 border border-border text-foreground font-medium rounded-lg hover:border-primary/50 hover:text-primary transition-all"
                             >
-                                Research & Writing
+                                About Me
                             </a>
                         </motion.div>
 

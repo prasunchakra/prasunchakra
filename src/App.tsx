@@ -4,7 +4,6 @@ import {
     About,
     Expertise,
     Projects,
-    Research,
     Contact,
     Footer,
 } from "./components/sections";
@@ -17,7 +16,6 @@ function App() {
             <About />
             <Expertise />
             <Projects />
-            <Research />
             <Contact />
             <Footer />
         </main>

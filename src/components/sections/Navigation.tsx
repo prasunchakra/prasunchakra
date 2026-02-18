@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X, AtSign } from "lucide-react";
 
 const navLinks = [
     { href: "#about", label: "About" },
     { href: "#expertise", label: "Expertise" },
-    { href: "#research", label: "Research" },
-    { href: "#contact", label: "Contact" },
+    { href: "#projects", label: "Projects" },
 ];
 
 export function Navigation() {
@@ -28,8 +27,8 @@ export function Navigation() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                        ? "bg-background/80 backdrop-blur-xl border-b border-border/50"
-                        : "bg-transparent"
+                    ? "bg-background/80 backdrop-blur-xl border-b border-border/50"
+                    : "bg-transparent"
                     }`}
             >
                 <nav className="max-w-6xl mx-auto px-6 py-4">
@@ -45,11 +44,11 @@ export function Navigation() {
                             </div>
                             <div className="hidden sm:flex flex-col">
                                 <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                                    prasunchakra
+                                    Prasun Chakraborty
                                 </span>
                                 <span className="text-xs text-muted-foreground terminal-text flex items-center gap-1">
-                                    <Shield className="w-3 h-3 text-primary" />
-                                    <span>secure_mode</span>
+                                    <AtSign className="w-3 h-3 text-primary" />
+                                    <span>prasunchakra</span>
                                 </span>
                             </div>
                         </a>
