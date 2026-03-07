@@ -1,23 +1,11 @@
-import {
-    Navigation,
-    Hero,
-    About,
-    Expertise,
-    Projects,
-    Contact,
-    Footer,
-} from "./components/sections";
+import { HeroSection } from "./components/sections/HeroSection";
+import { MatrixBackground } from "./components/sections/MatrixBackground";
 
 function App() {
     return (
-        <main className="relative min-h-screen">
-            <Navigation />
-            <Hero />
-            <About />
-            <Expertise />
-            <Projects />
-            <Contact />
-            <Footer />
+        <main className="relative">
+            <MatrixBackground />
+            <HeroSection />
         </main>
     );
 }
